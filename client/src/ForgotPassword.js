@@ -21,7 +21,7 @@ function ForgotPassword() {
 
   const handleRequestCode = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:5000/request-reset-code', {
+    const response = await fetch('https://mockmate-ai-cmii.onrender.com/request-reset-code', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
@@ -45,7 +45,7 @@ function ForgotPassword() {
       return;
     }
 
-    const response = await fetch('http://localhost:5000/reset-password', {
+    const response = await fetch('https://mockmate-ai-cmii.onrender.com/reset-password', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, code, newPassword }),

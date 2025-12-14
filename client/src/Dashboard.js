@@ -27,7 +27,7 @@ function Dashboard() {
        return;
     }
 
-    const response = await fetch('http://localhost:5000/change-password', {
+    const response = await fetch('https://mockmate-ai-cmii.onrender.com/change-password', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: userEmail, oldPassword, newPassword }),

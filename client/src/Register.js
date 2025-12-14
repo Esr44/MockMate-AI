@@ -41,7 +41,7 @@ function Register() {
     }
     
     try {
-      const response = await fetch('http://localhost:5000/request-code', {
+      const response = await fetch('https://mockmate-ai-cmii.onrender.com/request-code', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -63,7 +63,7 @@ function Register() {
   };
 
   const handleRegister = async () => {
-    const response = await fetch('http://localhost:5000/register', {
+    const response = await fetch('https://mockmate-ai-cmii.onrender.com/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password, code }),

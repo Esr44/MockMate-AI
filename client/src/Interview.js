@@ -40,7 +40,7 @@ function Interview() {
     const chatHistory = messages.map(msg => ({ role: msg.sender === 'user' ? 'user' : 'assistant', content: msg.text }));
     
     try {
-      const response = await fetch('http://localhost:5000/end-interview', {
+      const response = await fetch('https://mockmate-ai-cmii.onrender.com/end-interview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ history: chatHistory, lang: language }),
@@ -95,7 +95,7 @@ function Interview() {
     formData.append('lang', language);
     
     try {
-      const response = await fetch('http://localhost:5000/upload-cv', { method: 'POST', body: formData });
+      const response = await fetch('https://mockmate-ai-cmii.onrender.com/upload-cv', { method: 'POST', body: formData });
       const data = await response.json();
       // حذف رسالة "جاري التحليل" القديمة وإضافة الرد
       setMessages(prev => prev.filter(msg => msg.text !== t('analyzing')));
@@ -132,7 +132,7 @@ function Interview() {
     
     try {
       // 6. الإرسال للسيرفر (نرسل userMessage المحفوظ وليس input الفارغ)
-      const response = await fetch('http://localhost:5000/chat', {
+      const response = await fetch('https://mockmate-ai-cmii.onrender.com/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
